@@ -496,7 +496,7 @@ export default function PDFsPage() {
       await supabase.auth.signOut();
       
       // الانتقال إلى صفحة تسجيل الدخول
-      router.push('/auth/signin?redirect=' + encodeURIComponent('/pdfs'));
+      router.push("auth/signin");
     } catch (error) {
       console.error('Error in handleSignin:', error);
     }
@@ -709,7 +709,7 @@ export default function PDFsPage() {
                 className="w-100 py-3"
                 onClick={() => {
                   sessionStorage.setItem("prevPage", window.location.pathname + window.location.search);
-                  router.push('/register?redirect=' + encodeURIComponent('/pdfs'));
+                  router.push("auth/signin");
                 }}
               >
                 <FaUserPlus className="me-2" />

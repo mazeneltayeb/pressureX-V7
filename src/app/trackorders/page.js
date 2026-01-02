@@ -3325,7 +3325,7 @@ export default function CustomerOrdersPage() {
       await supabase.auth.signOut();
       
       // الانتقال إلى صفحة تسجيل الدخول
-      router.push('/auth/signin?redirect=' + encodeURIComponent('/customer-orders'));
+      router.push("auth/signin");
     } catch (error) {
       console.error('Error in handleSignin:', error);
       setError("حدث خطأ أثناء التحضير لتسجيل الدخول");
@@ -3543,7 +3543,7 @@ export default function CustomerOrdersPage() {
                 className="w-100 py-3"
                 onClick={() => {
                   sessionStorage.setItem("prevPage", window.location.pathname + window.location.search);
-                  router.push('/auth/signup?redirect=' + encodeURIComponent('/customer-orders'));
+                  router.pushpush("auth/signin");
                 }}
               >
                 <FaUserPlus className="me-2" />
